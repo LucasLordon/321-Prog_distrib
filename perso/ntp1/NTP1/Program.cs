@@ -17,9 +17,9 @@ class Program
         DateTime ntpTime = NtpPacket.ToDateTime(ntpData);
 
 
-
-        Console.WriteLine("Heure actuelle : " + ntpTime.ToString());
-
+        Console.WriteLine("Heure actuelle : " + ntpTime.DayOfWeek + ", " + ntpTime.Day + " " + ntpTime.ToString("MMMM") + " " + ntpTime.ToString("yyyy"));
+        Console.WriteLine("Heure actuelle : " + ntpTime.ToString("dd/MM/yyyy HH:mm:ss"));
+        Console.WriteLine("Heure actuelle : " + ntpTime.ToString("dd/MM/yyyy"));
         ntpClient.Close();
     }
 }
