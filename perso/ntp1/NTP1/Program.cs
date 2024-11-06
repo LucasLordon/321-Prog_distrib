@@ -20,6 +20,12 @@ class Program
         Console.WriteLine("Heure actuelle : " + ntpTime.DayOfWeek + ", " + ntpTime.Day + " " + ntpTime.ToString("MMMM") + " " + ntpTime.ToString("yyyy"));
         Console.WriteLine("Heure actuelle : " + ntpTime.ToString("dd/MM/yyyy HH:mm:ss"));
         Console.WriteLine("Heure actuelle : " + ntpTime.ToString("dd/MM/yyyy"));
+
+        Console.WriteLine("1) Différence de temps " + DateTime.Now.Subtract(ntpTime));
+        Console.WriteLine("2) Heure actuelle " + ntpTime.Add(DateTime.Now.Subtract(ntpTime)));
+        Console.WriteLine("3) Heure Utc " + ntpTime.Add(DateTime.Now.Subtract(ntpTime)).Subtract(DateTime.Now.Subtract(ntpTime)));
+        Console.WriteLine("4) Heure actuelle " + ntpTime.ToLocalTime());
+        Console.WriteLine("4) Heure actuelle " + ntpTime.ToLocalTime().Subtract(DateTime("0:1:0:0"));
         ntpClient.Close();
     }
 }
